@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="My_App" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+    <option name="RUN_PAGE" value="My_First_App.html" />
+    <option name="USE_SUPER_DEV_MODE" value="true" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <module name="My First App" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
