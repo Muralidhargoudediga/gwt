@@ -1,5 +1,6 @@
 package com.lynda.gwt.myfirstapp.client;
 
+import com.google.gwt.user.client.ui.*;
 import com.lynda.gwt.myfirstapp.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -9,13 +10,6 @@ import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -50,6 +44,66 @@ public class My_First_App implements EntryPoint {
 		RootPanel.get("nameFieldContainer").add(nameField);
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
+
+
+		Label label = new Label("How do you like the course so far?");
+
+		Button loveIt = new Button("Love it!");
+		Button okay = new Button("Okay");
+		Button terrible = new Button("Terrible!");
+
+		HorizontalPanel responses = new HorizontalPanel();
+		responses.setSpacing(5); //In Pixels
+		responses.add(loveIt);
+		responses.add(okay);
+		responses.add(terrible);
+
+		VerticalPanel survey = new VerticalPanel();
+		survey.setSpacing(5);
+		survey.add(label);
+		survey.add(responses);
+
+		survey.add(new Label("Please leave a comment."));
+		TextBox feedback = new TextBox();
+		feedback.setTitle("Please leave a comment.");
+
+		survey.add(feedback);
+
+		ListBox age = new ListBox();
+		age.addItem("<15");
+		age.addItem("15-24");
+		age.addItem("25-34");
+		age.addItem("35-44");
+		age.addItem(">45");
+
+		RadioButton male = new RadioButton("gender", "male");
+		RadioButton female = new RadioButton("gender", "female");
+		RadioButton other = new RadioButton("gender", "other");
+
+		HorizontalPanel gender = new HorizontalPanel();
+		gender.add(male);
+		gender.add(female);
+		gender.add(other);
+
+		VerticalPanel optionalSurvey = new VerticalPanel();
+		optionalSurvey.add(new Label("Age"));
+		optionalSurvey.add(age);
+
+		optionalSurvey.add(new Label("Gender"));
+		optionalSurvey.add(gender);
+
+		DisclosurePanel disclosurePanel = new DisclosurePanel("Optional");
+		disclosurePanel.setAnimationEnabled(true);
+
+		disclosurePanel.add(optionalSurvey);
+
+		survey.add(disclosurePanel);
+
+		DecoratorPanel prettySurvey = new DecoratorPanel();
+		prettySurvey.add(survey);
+
+		RootPanel.get().add(prettySurvey);
+
 
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);

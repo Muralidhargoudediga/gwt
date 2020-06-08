@@ -13,7 +13,10 @@
     </facet>
     <facet type="gwt" name="GWT">
       <configuration>
+        <setting name="compilerMaxHeapSize" value="1024" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../../../../gwt-2.9.0" />
+        <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
   </component>
