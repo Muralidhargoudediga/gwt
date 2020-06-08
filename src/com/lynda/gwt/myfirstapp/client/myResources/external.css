@@ -1,0 +1,12 @@
+.important{
+	font-weight: bold;
+}
+
+.bigRedBorder{
+	border: #ff0000 2px solid;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
