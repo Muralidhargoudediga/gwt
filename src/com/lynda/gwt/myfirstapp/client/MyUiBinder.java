@@ -40,14 +40,19 @@ public class MyUiBinder extends Composite implements HasText {
 	 */
 	public MyUiBinder() {
 		initWidget(uiBinder.createAndBindUi(this));
+		resource.external().ensureInjected();
 	}
 
 	@UiField
 	Button button;
 
+	@UiField
+	Resources resource;
+
 	public MyUiBinder(String firstName) {
 		initWidget(uiBinder.createAndBindUi(this));
-
+		//Make sure that css styles are injected into the DOM when the UiBuilder is constructed
+		resource.external().ensureInjected();
 		// Can access @UiField after calling createAndBindUi
 		button.setText(firstName);
 	}

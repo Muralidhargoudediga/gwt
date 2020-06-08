@@ -7,11 +7,15 @@
 		font-weight: bold;
 	}
 	</ui:style>
+	<!--<ui:style field="external" src="myResources/external.css"></ui:style>-->
+	<!--Including css file with CLientBundle-->
+	<ui:with field="resource" type="com.lynda.gwt.myfirstapp.client.Resources"/>
 	<g:HTMLPanel>
 		<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
 			widget names. The ui:field attribute binds an element to a field in the owner 
 			class. See the GWT docs on UI Binder for more details. -->
 		Hello,
-		<g:Button styleName="{style.important}" ui:field="button" />
+		<!--<g:Button styleName="{style.important}" ui:field="button" />-->
+		<g:Button addStyleNames="{style.important} {resource.external.important}" ui:field="button" text="{resource.name.getText}"/>
 	</g:HTMLPanel>
 </ui:UiBinder> 

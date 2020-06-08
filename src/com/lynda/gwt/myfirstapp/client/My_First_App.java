@@ -55,6 +55,10 @@ public class My_First_App implements EntryPoint {
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
 
+		//Adding Custom widget RootPanel
+		MyUiBinder myUiBinder = new MyUiBinder();
+
+		RootPanel.get().add(myUiBinder);
 
 		Label label = new Label("How do you like the course so far?");
 
