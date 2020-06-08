@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="My First App:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/My_First_App_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="My First App/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="My First App" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="gwt-servlet" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
