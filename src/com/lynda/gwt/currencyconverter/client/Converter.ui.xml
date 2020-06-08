@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+		.green {
+			color: green;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+
+		<h1 class="{style.green}">FX Rate Converter</h1>
+				
+		<g:Grid>
+			<g:row>
+				<g:customCell>
+					<g:TextBox ui:field="primaryAmt">1</g:TextBox>
+				</g:customCell>
+				<g:customCell>
+					<g:ListBox ui:field="primaryRateList">
+						<!-- populate with AJAX response -->
+						<!-- <g:item>USD</g:item> -->
+					</g:ListBox>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:TextBox ui:field="secondAmt" readOnly="true">0.95</g:TextBox>
+				</g:customCell>
+				<g:customCell>
+					<g:ListBox ui:field="secondRateList">
+						<!-- populate with AJAX response -->
+						<!-- <g:item>EUR</g:item> -->
+					</g:ListBox>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 
