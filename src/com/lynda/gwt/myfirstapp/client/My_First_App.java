@@ -1,5 +1,7 @@
 package com.lynda.gwt.myfirstapp.client;
 
+import com.google.gwt.user.client.ui.*;
+import com.lynda.gwt.myfirstapp.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -53,40 +55,70 @@ public class My_First_App implements EntryPoint {
 		RootPanel.get("sendButtonContainer").add(sendButton);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
 
+
+		Label label = new Label("How do you like the course so far?");
+
+		Button loveIt = new Button("Love it!");
+		Button okay = new Button("Okay");
+		Button terrible = new Button("Terrible!");
+
+		HorizontalPanel responses = new HorizontalPanel();
+		responses.setSpacing(5); //In Pixels
+		responses.add(loveIt);
+		responses.add(okay);
+		responses.add(terrible);
+
+		VerticalPanel survey = new VerticalPanel();
+		survey.setSpacing(5);
+		survey.add(label);
+		survey.add(responses);
+
+		survey.add(new Label("Please leave a comment."));
+		TextBox feedback = new TextBox();
+		feedback.setTitle("Please leave a comment.");
+
+		survey.add(feedback);
+
+		ListBox age = new ListBox();
+		age.addItem("<15");
+		age.addItem("15-24");
+		age.addItem("25-34");
+		age.addItem("35-44");
+		age.addItem(">45");
+
+		RadioButton male = new RadioButton("gender", "male");
+		RadioButton female = new RadioButton("gender", "female");
+		RadioButton other = new RadioButton("gender", "other");
+
+		HorizontalPanel gender = new HorizontalPanel();
+		gender.add(male);
+		gender.add(female);
+		gender.add(other);
+
+		VerticalPanel optionalSurvey = new VerticalPanel();
+		optionalSurvey.add(new Label("Age"));
+		optionalSurvey.add(age);
+
+		optionalSurvey.add(new Label("Gender"));
+		optionalSurvey.add(gender);
+
+		DisclosurePanel disclosurePanel = new DisclosurePanel("Optional");
+		disclosurePanel.setAnimationEnabled(true);
+
+		disclosurePanel.add(optionalSurvey);
+
+		survey.add(disclosurePanel);
+
+		DecoratorPanel prettySurvey = new DecoratorPanel();
+		prettySurvey.add(survey);
+
+		RootPanel.get().add(prettySurvey);
+
+
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
 		nameField.selectAll();
 
-		Label question = new Label("How do you like the course so far?");
-		
-		Button loveIt = new Button("Love it!");
-		Button okay = new Button("Okay");
-		Button terrible = new Button("Terrible!");
-		
-		HorizontalPanel responses = new HorizontalPanel();
-		responses.add(loveIt);
-		responses.add(okay);
-		responses.add(terrible);
-		
-		VerticalPanel survey = new VerticalPanel();
-		survey.setSpacing(4);
-		survey.add(question);
-		survey.add(responses);
-		
-		survey.add(new Label("Please leave a comment"));
-		
-		TextBox feedback = new TextBox();
-		feedback.setTitle("Please leave a comment");
-		
-		survey.add(feedback);
-		
-		
-		DecoratorPanel prettySurvey = new DecoratorPanel();
-		prettySurvey.add(survey);
-		
-		RootPanel.get().add(prettySurvey);
-		
-		
 		// Create the popup dialog box
 		final DialogBox dialogBox = new DialogBox();
 		dialogBox.setText("Remote Procedure Call");
