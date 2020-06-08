@@ -17,6 +17,9 @@
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../../../../gwt-2.9.0" />
         <setting name="webFacet" value="Web" />
+        <packaging>
+          <module name="com.lynda.gwt.currencyconverter.Converter" path="/converter" />
+        </packaging>
       </configuration>
     </facet>
   </component>

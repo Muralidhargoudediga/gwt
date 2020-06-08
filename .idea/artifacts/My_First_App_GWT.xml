@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/My_First_App_GWT</output-path>
     <root id="root">
       <element id="gwt-compiler-output" facet="My First App/gwt/GWT" />
+      <element id="artifact" artifact-name="My First App:Web exploded" />
     </root>
   </artifact>
 </component>
