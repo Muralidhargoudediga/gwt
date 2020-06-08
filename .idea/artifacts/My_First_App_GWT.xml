@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="My First App:GWT">
+    <output-path>$PROJECT_DIR$/out/artifacts/My_First_App_GWT</output-path>
+    <root id="root">
+      <element id="gwt-compiler-output" facet="My First App/gwt/GWT" />
+    </root>
+  </artifact>
+</component>
